@@ -1,0 +1,291 @@
+{
+  "id": "tpl-2253424201",
+  "name": "Stress Test Stress Simulator for Payments",
+  "description": "Automatically investigates merchant profiles, monitors transactions, and coordinate actions across Payment Switch to improve NPL recovery.",
+  "industry": "Banking & Finance",
+  "pattern": "Reflection",
+  "complexity": "Intermediate",
+  "rating": 4.8,
+  "downloads": 39916,
+  "favorites": 7501,
+  "executionTime": "15min",
+  "tags": [
+    "kyc",
+    "markets",
+    "reflection",
+    "banking"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Alert Intake",
+      "description": "Collect and validate exposure ladders."
+    },
+    {
+      "id": "draft-0",
+      "name": "Draft",
+      "description": "Draft step aligned to Reflection pattern."
+    },
+    {
+      "id": "self-critique-1",
+      "name": "Self-Critique",
+      "description": "Self-Critique step aligned to Reflection pattern."
+    },
+    {
+      "id": "profiling-0",
+      "name": "Profiling",
+      "description": "Profiling with guardrails and observability."
+    },
+    {
+      "id": "allocation-1",
+      "name": "Allocation",
+      "description": "Allocation with guardrails and observability."
+    },
+    {
+      "id": "decision-gate-2",
+      "name": "Decision Gate",
+      "description": "Decision Gate with guardrails and observability."
+    },
+    {
+      "id": "scoring-3",
+      "name": "Scoring",
+      "description": "Scoring with guardrails and observability."
+    },
+    {
+      "id": "link-analysis-4",
+      "name": "Link Analysis",
+      "description": "Link Analysis with guardrails and observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Handoff",
+      "description": "Finalize outputs and governance logging in Sanctions Gateway."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Alert Intake",
+        "description": "Collect and validate exposure ladders.",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Draft",
+        "description": "Draft step aligned to Reflection pattern.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Self-Critique",
+        "description": "Self-Critique step aligned to Reflection pattern.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "profiling-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Profiling",
+        "description": "Profiling with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "allocation-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Allocation",
+        "description": "Allocation with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "decision-gate-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Decision Gate",
+        "description": "Decision Gate with guardrails and observability.",
+        "nodeType": "condition",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "scoring-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "Scoring",
+        "description": "Scoring with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    },
+    {
+      "id": "link-analysis-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "Link Analysis",
+        "description": "Link Analysis with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1810,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Handoff",
+        "description": "Finalize outputs and governance logging in Sanctions Gateway.",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2060,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "draft-0",
+      "target": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "self-critique-1",
+      "target": "profiling-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "profiling-0",
+      "target": "allocation-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "allocation-1",
+      "target": "decision-gate-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "decision-gate-2",
+      "target": "scoring-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-6",
+      "source": "scoring-3",
+      "target": "link-analysis-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-7",
+      "source": "link-analysis-4",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Alert Intake → Draft → Self-Critique → Profiling → Allocation → Decision Gate → Scoring → Link Analysis → Handoff",
+  "featured": false,
+  "createdAt": "2025-04-23T17:45:59.264Z",
+  "author": "AgentBridge Team",
+  "deployments": 4028,
+  "lastDeployed": "2025-08-24T22:50:55.973Z",
+  "configuration": {
+    "provider": "gcp",
+    "region": "us-west-2",
+    "compute": "gpu-single"
+  },
+  "healthStatus": "healthy",
+  "deploymentCount": 2016,
+  "githubRepo": "https://github.com/agentbridge/stress-test-stress-simulator-for-payments",
+  "maintainer": "AgentBridge Team"
+}
